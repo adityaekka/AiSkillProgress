@@ -3,4 +3,7 @@ export { default as SearchBar } from "./SearchBar";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as MindMapNode } from "./MindMapNode";
 export { default as SkillCard } from "./SkillCard";
+export { default as SubSkillCard } from "./SubSkillCard";
 export { default as Button } from "./Button";
+export { default as AddSubtopicModal } from "./AddSubtopicModal";
+export { default as AddSkillModal } from "./AddSkillModal";

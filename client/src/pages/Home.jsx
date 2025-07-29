@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SkillCard } from "../components/components";
+import { SkillCard, AddSkillModal } from "../components/components";
 
 const demoProjects = [
   { name: "React JS", level: "Intermediate", started: "20 July 2023" },
@@ -25,6 +25,16 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [filteredProjects, setFilteredProjects] = useState([]);
   console.log(filteredProjects);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // console.log(filteredProjects);
+  const handleAddProject = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+  const handleSaveProject = (newProject) => {
+    // setDemoProjects((prev) => [...prev, newProject]);
+    alert("Project saved: " + JSON.stringify(newProject));
+  };
+
   useEffect(() => {
     // Check if localStorage has data, otherwise set demo
     const storedProjects = JSON.parse(localStorage.getItem("projects"));
@@ -48,9 +58,6 @@ const Home = () => {
     );
   };
 
-  const handleAddProject = () => {
-    alert("Add Project functionality to be implemented.");
-  };
   if (projects.length === 0) {
     return (
       <div className="w-full h-full flex items-center justify-center">
@@ -101,6 +108,11 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <AddSkillModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onSave={handleSaveProject}
+      />
     </div>
   );
 };
