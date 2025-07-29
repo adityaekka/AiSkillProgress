@@ -4,10 +4,12 @@ import { chatbot } from "../assets/icons/icons";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen relative bg-[#242423] text-[#f4f3ee]">
-      <Header />
+    <div className="w-full h-full overflow-hidden">
+      <div className="h-[10%]">
+        <Header />
+      </div>
 
-      <main className="max-w-7xl mx-auto px-4 py-6">
+      <main className="h-[90%] px-10 pb-10">
         <Outlet />
       </main>
 

@@ -1,1 +1,10 @@
+/* input.css or app.css */
 @import "tailwindcss";
+
+@theme {
+  --color-textColor: #f4f3ee;
+  --color-btnColor: #178582;
+  --color-bgColor: #242423;
+  --color-progressColor: #24a147;
+  --color-logoColor: #fc93ad;
+}

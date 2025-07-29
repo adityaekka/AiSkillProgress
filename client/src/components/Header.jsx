@@ -1,15 +1,10 @@
-import { profile } from "../assets/icons/icons";
+import { menu } from "../assets/icons/icons";
 const Header = () => {
   return (
-    <header className="w-full bg-transparent px-6 py-4 flex justify-between items-center">
-      <div className="text-4xl font-bold text-[#fc93ad]">SkillForge</div>
-
-      <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-        <img
-          src={profile}
-          alt="Profile"
-          className="w-full h-full object-cover"
-        />
+    <header className="flex justify-between items-center p-3">
+      <div className="text-4xl font-extrabold text-[#FC93AD]">SkillForge</div>
+      <div>
+        <img src={menu} alt="Profile" className="w-8 h-8" />
       </div>
     </header>
   );
