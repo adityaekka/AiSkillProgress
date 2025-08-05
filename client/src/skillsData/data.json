@@ -1,0 +1,237 @@
+{
+  "skillsData": [
+    {
+      "id": 1,
+      "name": "React.js",
+      "category": "Frontend",
+      "targetCompletion": "2025-08-30",
+      "description": "JavaScript library for building user interfaces",
+      "subtopics": [
+        {
+          "id": "react-1",
+          "title": "JSX & Components",
+          "status": "completed",
+          "priority": "high",
+          "createdAt": "2025-07-01",
+          "startedAt": "2025-07-02",
+          "completedAt": "2025-07-04",
+          "estimatedHours": 6,
+          "actualHours": 5,
+          "confidenceLevel": 4,
+          "resources": [
+            {
+              "type": "documentation",
+              "url": "https://reactjs.org/docs/introducing-jsx.html",
+              "title": "Official JSX Documentation"
+            },
+            {
+              "type": "video",
+              "url": "https://youtube.com/watch?v=example1",
+              "title": "JSX Crash Course"
+            }
+          ],
+          "notes": "Grasped the concept well, need more practice with component composition"
+        },
+        {
+          "id": "react-2",
+          "title": "State & Props",
+          "status": "completed",
+          "priority": "high",
+          "createdAt": "2025-07-03",
+          "startedAt": "2025-07-04",
+          "completedAt": "2025-07-06",
+          "estimatedHours": 8,
+          "actualHours": 7,
+          "confidenceLevel": 3,
+          "resources": [
+            {
+              "type": "documentation",
+              "url": "https://reactjs.org/docs/state-and-props.html"
+            }
+          ],
+          "notes": "State management needs more practice"
+        },
+        {
+          "id": "react-3",
+          "title": "Hooks",
+          "status": "in_progress",
+          "priority": "medium",
+          "createdAt": "2025-07-05",
+          "startedAt": "2025-07-06",
+          "completedAt": null,
+          "estimatedHours": 10,
+          "actualHours": 6,
+          "confidenceLevel": 2,
+          "resources": [
+            {
+              "type": "documentation",
+              "url": "https://reactjs.org/docs/hooks-intro.html"
+            }
+          ],
+          "notes": "Working on useEffect dependencies"
+        },
+        {
+          "id": "react-4",
+          "title": "Context API",
+          "status": "not_started",
+          "priority": "medium",
+          "createdAt": "2025-07-10",
+          "startedAt": null,
+          "completedAt": null,
+          "estimatedHours": 5,
+          "actualHours": 0,
+          "confidenceLevel": 0,
+          "resources": [],
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "DSA",
+      "category": "Computer Science",
+      "targetCompletion": "2025-09-15",
+      "description": "Data Structures and Algorithms",
+      "subtopics": [
+        {
+          "id": "dsa-1",
+          "title": "Arrays",
+          "status": "completed",
+          "priority": "high",
+          "createdAt": "2025-07-02",
+          "startedAt": "2025-07-03",
+          "completedAt": "2025-07-05",
+          "estimatedHours": 12,
+          "actualHours": 10,
+          "confidenceLevel": 4,
+          "resources": [
+            {
+              "type": "book",
+              "title": "Algorithm Design Manual",
+              "chapter": "2"
+            }
+          ],
+          "notes": "Strong with array manipulation, need more practice with 2D arrays"
+        },
+        {
+          "id": "dsa-2",
+          "title": "Stacks & Queues",
+          "status": "completed",
+          "priority": "medium",
+          "createdAt": "2025-07-05",
+          "startedAt": "2025-07-06",
+          "completedAt": "2025-07-08",
+          "estimatedHours": 8,
+          "actualHours": 9,
+          "confidenceLevel": 3,
+          "resources": [],
+          "notes": "Implemented custom stack class successfully"
+        },
+        {
+          "id": "dsa-3",
+          "title": "Trees",
+          "status": "in_progress",
+          "priority": "high",
+          "createdAt": "2025-07-07",
+          "startedAt": "2025-07-08",
+          "completedAt": null,
+          "estimatedHours": 15,
+          "actualHours": 8,
+          "confidenceLevel": 2,
+          "resources": [
+            {
+              "type": "online-course",
+              "title": "Binary Trees Section",
+              "url": "https://course.example.com/trees"
+            }
+          ],
+          "notes": "Working on traversal algorithms"
+        },
+        {
+          "id": "dsa-4",
+          "title": "Graphs",
+          "status": "not_started",
+          "priority": "high",
+          "createdAt": "2025-07-12",
+          "startedAt": null,
+          "completedAt": null,
+          "estimatedHours": 20,
+          "actualHours": 0,
+          "confidenceLevel": 0,
+          "resources": [],
+          "notes": ""
+        },
+        {
+          "id": "dsa-5",
+          "title": "Dynamic Programming",
+          "status": "not_started",
+          "priority": "high",
+          "createdAt": "2025-07-12",
+          "startedAt": null,
+          "completedAt": null,
+          "estimatedHours": 25,
+          "actualHours": 0,
+          "confidenceLevel": 0,
+          "resources": [],
+          "notes": "Important for interviews"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "TypeScript",
+      "category": "Frontend",
+      "targetCompletion": "2025-08-20",
+      "description": "Typed superset of JavaScript",
+      "subtopics": [
+        {
+          "id": "ts-1",
+          "title": "Basic Types",
+          "status": "completed",
+          "priority": "high",
+          "createdAt": "2025-07-10",
+          "startedAt": "2025-07-11",
+          "completedAt": "2025-07-12",
+          "estimatedHours": 4,
+          "actualHours": 3,
+          "confidenceLevel": 4,
+          "resources": [
+            {
+              "type": "documentation",
+              "url": "https://www.typescriptlang.org/docs/handbook/basic-types.html"
+            }
+          ],
+          "notes": "Good understanding of core types"
+        },
+        {
+          "id": "ts-2",
+          "title": "Interfaces",
+          "status": "in_progress",
+          "priority": "high",
+          "createdAt": "2025-07-12",
+          "startedAt": "2025-07-13",
+          "completedAt": null,
+          "estimatedHours": 6,
+          "actualHours": 2,
+          "confidenceLevel": 2,
+          "resources": [],
+          "notes": "Need more practice with complex interfaces"
+        },
+        {
+          "id": "ts-3",
+          "title": "Generics",
+          "status": "not_started",
+          "priority": "medium",
+          "createdAt": "2025-07-12",
+          "startedAt": null,
+          "completedAt": null,
+          "estimatedHours": 8,
+          "actualHours": 0,
+          "confidenceLevel": 0,
+          "resources": [],
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
