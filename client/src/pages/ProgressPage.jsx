@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SkillProgressChart from "../components/SkillProgressChart";
 import { skillsData } from "../skillsData/data.json";
+import SkillSearchFilter from "../components/SkillSearchFilter";
 
 const chartTypes = ["bar", "line", "area"];
 
@@ -13,28 +14,20 @@ const ProgressPage = () => {
   );
 
   return (
-    <div className="min-h-screen p-4 bg-gray-100">
+    <div className="w-full h-full flex items-center justify-center px-4 md:px-10 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {/* Sidebar */}
+
         <aside className="bg-white p-4 rounded shadow-md md:col-span-1">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">
             Skill Navigation
           </h2>
-          <div className="space-y-2">
-            {skillsData.map((skill) => (
-              <button
-                key={skill.id}
-                onClick={() => setSelectedSkillId(skill.id)}
-                className={`block w-full text-left px-3 py-2 rounded ${
-                  selectedSkillId === skill.id
-                    ? "bg-blue-100 text-blue-700 font-semibold"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                {skill.name}
-              </button>
-            ))}
-          </div>
+
+          <SkillSearchFilter
+            skills={skillsData}
+            selectedSkillId={selectedSkillId}
+            onSkillSelect={(id) => setSelectedSkillId(id)}
+          />
         </aside>
 
         {/* Main Content */}
@@ -66,8 +59,9 @@ const ProgressPage = () => {
           <div className="w-full h-[400px]">
             {selectedSkillData && (
               <SkillProgressChart
-                type={selectedChartType}
-                skillData={selectedSkillData}
+                // type={selectedChartType}
+                // skillData={selectedSkillData}
+                data={selectedSkillData}
               />
             )}
           </div>
