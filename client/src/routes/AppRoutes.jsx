@@ -1,5 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, SkillPage, ProgressPage, NotFound } from "../pages/pages";
+import {
+  Home,
+  SkillPage,
+  SkillsPage,
+  ProgressPage,
+  NotFound,
+} from "../pages/pages";
 import MainLayout from "../layouts/MainLayout";
 
 const AppRoutes = () => {
@@ -7,7 +13,8 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="/skills" element={<SkillPage />} />
+        <Route path="/skillsPage" element={<SkillsPage />} />
+        <Route path="/skillPage/:name" element={<SkillPage />} />
         <Route path="/progress" element={<ProgressPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>

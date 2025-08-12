@@ -1,5 +1,4 @@
 export { default as Header } from "./Header";
-export { default as MindMapNode } from "./MindMapNode";
 export { default as SkillCard } from "./SkillCard";
 export { default as SubSkillCard } from "./SubSkillCard";
 export { default as Button } from "./Button";

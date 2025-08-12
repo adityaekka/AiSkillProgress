@@ -1,8 +1,27 @@
+import { useNavigate } from "react-router-dom";
+
 const SkillCard = ({ idx, project }) => {
+  const navigate = useNavigate();
+  let totalSubtopics = project.subtopics.length || 0;
+  let completedSubtopics =
+    project.subtopics.filter((task) => task.status === "completed").length || 0;
+  let percentage = Math.floor((completedSubtopics / totalSubtopics) * 100);
+
   return (
     <div
       key={idx}
-      className="p-4 bg-cardBg rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+      className={`p-4 bg-cardBg rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer ${
+        percentage == 100
+          ? "bg-red-300"
+          : percentage == 0
+          ? "bg-blue-300"
+          : "bg-yellow-200"
+      }`}
+      onClick={() =>
+        navigate(`/skillPage/${project.name}`, {
+          state: { project },
+        })
+      }
     >
       <div className="flex justify-between items-start">
         <div>
@@ -21,20 +40,24 @@ const SkillCard = ({ idx, project }) => {
         <div className="w-full bg-gray-700 rounded-full h-2.5">
           <div
             className="bg-btnColor h-2.5 rounded-full"
-            style={{ width: `${project.progress || 0}%` }}
+            style={{ width: `${percentage}%` }}
           ></div>
         </div>
-        <p className="text-xs text-gray-400 mt-1">
-          {project.progress || 0}% complete
-        </p>
+        <p className="text-xs text-gray-400 mt-1">{percentage}% complete</p>
       </div>
 
       {/* Additional project info */}
       <div className="mt-4 flex justify-between text-xs text-gray-400">
-        <span>Created: {project.dateAdded || "N/A"}</span>
-        <span>Completed: {project.dateAdded || "N/A"}</span>
         <span>
-          {project.tasks || 0}/{project.totalTasks || 10} tasks
+          Status:{" "}
+          {percentage === 100
+            ? "Completed"
+            : percentage === 0
+            ? "Not Started"
+            : "In Progress"}
+        </span>
+        <span>
+          {completedSubtopics}/{totalSubtopics} tasks
         </span>
       </div>
     </div>
