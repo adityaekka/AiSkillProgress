@@ -1,52 +1,40 @@
-const SubSkillCard = ({ idx, project }) => {
-  console.log("Project Data:", project);
-  let totalSubtopics = project.subtopics.length || 0;
-  let completedSubtopics =
-    project.subtopics.filter((task) => task.status === "completed").length || 0;
+const statusColors = {
+  completed: "bg-green-200 text-green-800",
+  in_progress: "bg-yellow-200 text-yellow-800",
+  not_started: "bg-gray-200 text-gray-800",
+};
 
-  let percentage = Math.floor((completedSubtopics / totalSubtopics) * 100);
-
+const priorityColors = {
+  high: "text-red-500 font-bold",
+  medium: "text-yellow-500 font-semibold",
+  low: "text-green-500",
+};
+const SubSkillCard = ({ sub }) => {
   return (
     <div
-      key={idx}
-      className="p-4 bg-cardBg rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+      key={sub.id}
+      className="border rounded-lg p-3 hover:shadow-md transition"
     >
-      <div className="flex justify-between items-start">
-        <div>
-          <h2 className="text-lg md:text-xl font-semibold text-white">
-            {project.name}
-          </h2>
-          <p className="text-sm text-gray-300 mt-1">{project.level}</p>
-        </div>
-        <div className="flex gap-2">
-          {/* Add action buttons/icons here if needed */}
-        </div>
-      </div>
-
-      {/* Progress bar example */}
-      <div className="mt-4">
-        <div className="w-full bg-gray-700 rounded-full h-2.5">
-          <div
-            className="bg-btnColor h-2.5 rounded-full"
-            style={{ width: `${percentage}%` }}
-          ></div>
-        </div>
-        <p className="text-xs text-gray-400 mt-1">{percentage}% complete</p>
-      </div>
-
-      {/* Additional project info */}
-      <div className="mt-4 flex justify-between text-xs text-gray-400">
-        <span>
-          Status:{" "}
-          {percentage === 100
-            ? "Completed"
-            : percentage === 0
-            ? "Not Started"
-            : "In Progress"}
+      <div className="flex justify-between items-center">
+        <h2 className="font-semibold">{sub.title}</h2>
+        <span
+          className={`px-2 py-1 text-xs rounded ${statusColors[sub.status]}`}
+        >
+          {sub.status.replace("_", " ")}
         </span>
-        <span>
-          {completedSubtopics}/{totalSubtopics} tasks
-        </span>
+      </div>
+      <div className="text-sm text-gray-500">
+        Priority:{" "}
+        <span className={priorityColors[sub.priority]}>{sub.priority}</span>
+      </div>
+      <div className="mt-1 text-xs text-gray-500">
+        Created: {sub.createdAt} <br />
+        {sub.startedAt && (
+          <>
+            Started: {sub.startedAt} <br />
+          </>
+        )}
+        {sub.completedAt && <>Completed: {sub.completedAt}</>}
       </div>
     </div>
   );

@@ -81,7 +81,7 @@ const SkillsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto h-[calc(100vh-260px)] pr-2 custom-scrollbar">
             {skillsData.length ? (
               skillsData.map((project, idx) => (
-                <SkillCard key={idx} idx={idx} project={project} />
+                <SkillCard idx={idx} project={project} />
               ))
             ) : (
               <div className="col-span-full text-center text-gray-400">
